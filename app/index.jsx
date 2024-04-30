@@ -4,11 +4,13 @@ import {Link} from 'expo-router';
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className= "text-4xl">Welcome!</Text>
-      <StatusBar style="auto" />
-      <Link href = "/profile" style = {{color: 'blue'}}>Go to Profile</Link>
-    </View>
+    <View className="flex-1 bg-primary text-center">
+      <Text className="font-iregular text-secondary alignItems-center">Welcome!</Text>
+      <StatusBar />
+      <Link href="/profile" className= "text-tertiary">Go to Profile</Link>
+</View>
+
+
   );
 }
 

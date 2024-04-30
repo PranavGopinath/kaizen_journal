@@ -1,9 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
+  content: ["./app/**/*.jsx", "./components/**/*.jsx"],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        primary:'#1f1f1f',
+        secondary:'#eaeaea',
+        tertiary:'#0b7a75'
+      },
+      fontFamily:{
+         iregular:["Inter-Regular"],
+         iBlack:["Inter-Black"],
+         iBold:["Inter-Bold"],
+         iItalic:["Inter-Italic"],
+         iLight:["Inter-Light"],
+         iThin:["Inter-Thin"],
+      }
+    },
   },
   plugins: [],
+  assets: ["./assets/fonts"],
 }
 
