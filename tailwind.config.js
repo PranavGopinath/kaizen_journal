@@ -6,7 +6,8 @@ module.exports = {
       colors:{
         primary:'#1f1f1f',
         secondary:'#eaeaea',
-        tertiary:'#0b7a75'
+        tertiary:'#0b7a75',
+        greyshade:'#7d8491'
       },
       fontFamily:{
          iregular:["Inter-Regular"],
@@ -18,7 +19,9 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+
+  ],
   assets: ["./assets/fonts"],
 }
 
