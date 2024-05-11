@@ -46,14 +46,14 @@ const TabsLayout = () => {
               )
             }} />
             <Tabs.Screen 
-            name = "create" 
+            name = "today" 
             options = {{
               headerShown:false,
               tabBarIcon: ({color, focused}) =>(
                 <TabIcon 
                   icon={<Ionicons name="create" size={24} color={`${focused ? '#eaeaea' : '#7d8491'}`}/>}
                   color={color}
-                  name="Create"
+                  name="Today"
                   focused = {focused}
                 />
               )
