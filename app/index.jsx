@@ -1,14 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import {Link} from 'expo-router';
+import BottomBar from '../components/bottomBar';
+import {SafeAreaView} from 'react-native-safe-area-context'
+import { Image } from 'react-native';
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className= "text-3xl">Welcome!</Text>
-      <StatusBar style="auto" />
-      <Link href = "/profile" style = {{color: 'blue'}}>Go to Profile</Link>
-    </View>
+    <SafeAreaView className="bg-primary h-full">
+      <ScrollView contentContainerStyle={{height:'100%'}}>
+        <View>
+          <Image
+            source={require("../assets/images/logo.png")}
+          />
+        <Link href="/calendar" className= "text-tertiary top-10">Go to Calendar</Link>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
