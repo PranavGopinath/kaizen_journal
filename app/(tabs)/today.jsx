@@ -4,13 +4,18 @@ import {months} from '../../components/calendarDates'
 import dayjs from "dayjs";
 import Header from "../../components/Header";
 import CheckBox from '../../components/CheckBox';
+import ListItem from '../../components/ListItem';
 
 const Today = () => {
   const currentDate = dayjs();
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(false);
   const [checkbox3, setCheckbox3] = useState(false);
-  const checklist  = "Checklist"
+  const checklist  = "Checklist";
+  const gratitude  = "Gratitude";
+  const gratitude1 = " 1. "
+  const gratitude2 = " 2. "
+  const reflection = "Daily Reflection"
   return (
     <ScrollView>
       <View className = "bg-primary w-screen h-screen">
@@ -38,7 +43,19 @@ const Today = () => {
             isChecked={checkbox3}
             onPress={() => setCheckbox3(!checkbox3)}
           />
-      </View>
+      <Header 
+        heading = {gratitude}
+        />
+      <ListItem 
+        index = {gratitude1}
+      />
+      <ListItem 
+        index = {gratitude2}
+      />
+      <Header 
+        heading = {reflection}
+        />
+        </View>
       </View>
       </View>
     </ScrollView>
