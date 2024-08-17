@@ -1,32 +1,47 @@
-import { View, Text, TextInput } from 'react-native'
-import CheckBox from '@react-native-community/checkbox'
-import {React, useState} from 'react'
+import {View, Text, ScrollView } from 'react-native'
+import React, {useState} from 'react'
 import {months} from '../../components/calendarDates'
 import dayjs from "dayjs";
+import Header from "../../components/Header";
+import CheckBox from '../../components/CheckBox';
 
 const Today = () => {
-
   const currentDate = dayjs();
-  const [isSelected, setSelection] = useState(false);
-
+  const [checkbox1, setCheckbox1] = useState(false);
+  const [checkbox2, setCheckbox2] = useState(false);
+  const [checkbox3, setCheckbox3] = useState(false);
+  const checklist  = "Checklist"
   return (
-    <View className="flex flex-auto bg-primary">
-      <Text className = "text-center text-secondary">{months[currentDate.month()]} {currentDate.date()}, {currentDate.year()}</Text>
-      <Text className = "left-10 mt-3 pl-1 w-20 rounded-md bg-greyshade">Checklist:</Text>
-      <View className = "flex left-10 flex-wrap overflow-hidden">
-        <View className="flex flex-row mt-2 w-40 relative items-center">
-        <CheckBox
-          value={isSelected}
-          onValueChange={setSelection}
-        />
-          <TextInput type="checkbox" id = "checklist1" className="pl-2 flex shrink-0 text-secondary"/>
-        </View>
-        <View className = "mt-2 w-40 bg-secondary relative">
-          <Text>Checklist Item 2</Text>
-        </View>
-        
+    <ScrollView>
+      <View className = "bg-primary w-screen h-screen">
+      <View className="flex items-center top-5 h-5">
+      <Text className = "text-secondary font-bold text-base">{months[currentDate.month()]} {currentDate.date()}, {currentDate.year()}
+      </Text>
       </View>
-    </View>
+      <View className = "flex justify-center content-evenly">
+      <Header 
+          heading = {checklist}
+        />
+      <View className = "top-10">
+      <CheckBox
+            title= "Item 1"
+            isChecked={checkbox1}
+            onPress={() => setCheckbox1(!checkbox1)}
+          />
+          <CheckBox
+            title= "Item 2"
+            isChecked={checkbox2}
+            onPress={() => setCheckbox2(!checkbox2)}
+          />
+          <CheckBox
+            title= "Item 3"
+            isChecked={checkbox3}
+            onPress={() => setCheckbox3(!checkbox3)}
+          />
+      </View>
+      </View>
+      </View>
+    </ScrollView>
   )
 }
 
