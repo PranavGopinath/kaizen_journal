@@ -6,7 +6,6 @@ import {SafeAreaView} from 'react-native-safe-area-context'
 import dayjs from "dayjs";
 import { MaterialIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import {NextMonth} from '../../components/NextMonth'
 
 const Calendar = () => {
   const days = ["S", "M", "T", "W", "T", "F", "S"]
