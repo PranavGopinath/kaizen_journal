@@ -1,10 +1,10 @@
 import {View, Text, ScrollView, TextInput } from 'react-native'
 import React, {useState} from 'react'
-import {months} from '../../../components/calendarDates'
+import {months} from '../../components/calendarDates'
 import dayjs from "dayjs";
-import Header from "../../../components/Header";
-import CheckBox from '../../../components/CheckBox';
-import ListItem from '../../../components/ListItem';
+import Header from "../../components/Header";
+import CheckBox from '../../components/CheckBox';
+import ListItem from '../../components/ListItem';
 
 const Today = () => {
   const currentDate = dayjs();
@@ -49,13 +49,13 @@ const Today = () => {
       <ListItem 
         index = {gratitude1}
       />
-      <TextInput 
+      {/* <TextInput 
         className = "flex-1 text-secondary font-semibold text-base"
         value = {value}
         placeholder = {placeholder}
         placeholderTextColor={"#7d8491"}
         onChangeText = {handleChangeText}
-      />
+      /> */}
       <ListItem 
         index = {gratitude2}
       />
