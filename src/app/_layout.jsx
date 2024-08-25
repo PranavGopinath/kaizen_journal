@@ -5,19 +5,19 @@ import {useFonts} from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import {useEffect} from 'react'
 import {Tabs, Redirect} from 'expo-router';
-import "../styles/styles.css"
+import "../../styles/styles.css"
 
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [fontsLoaded, error] = useFonts({
-    "Inter-Regular": require("../assets/fonts/Inter-Regular.ttf"),
-    "Inter-Black": require("../assets/fonts/Inter-Black.ttf"),
-    "Inter-Bold": require("../assets/fonts/Inter-Bold.ttf"),
-    "Inter-Thin": require("../assets/fonts/Inter-Thin.ttf"),
-    "Inter-Light": require("../assets/fonts/Inter-Light.ttf"),
-    "Inter-Italic": require("../assets/fonts/Inter-Italic.ttf")
+    "Inter-Regular": require("../../assets/fonts/Inter-Regular.ttf"),
+    "Inter-Black": require("../../assets/fonts/Inter-Black.ttf"),
+    "Inter-Bold": require("../../assets/fonts/Inter-Bold.ttf"),
+    "Inter-Thin": require("../../assets/fonts/Inter-Thin.ttf"),
+    "Inter-Light": require("../../assets/fonts/Inter-Light.ttf"),
+    "Inter-Italic": require("../../assets/fonts/Inter-Italic.ttf")
   });
 
   useEffect(() =>{

@@ -11,9 +11,11 @@ export default function App() {
       <ScrollView contentContainerStyle={{height:'100%'}}>
         <View>
           <Image
-            source={require("../assets/images/logo.png")}
+            source={require("../../assets/images/logo.png")}
           />
-        <Link href="/calendar" className= "text-tertiary top-10">Go to Calendar</Link>
+        <Link href="/sign-in" className= "text-tertiary top-10">Sign In</Link>
+        <Link href="/sign-up" className= "text-tertiary top-10">Sign Up</Link>
+        <Link href="/calendar" className= "text-tertiary top-10">Calendar</Link>
         </View>
       </ScrollView>
     </SafeAreaView>
