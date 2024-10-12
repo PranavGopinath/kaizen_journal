@@ -5,9 +5,10 @@ import dayjs from "dayjs";
 import Header from "../../components/Header";
 import CheckBox from '../../components/CheckBox';
 import ListItem from '../../components/ListItem';
-// import supabase from '../../src/config/SupabaseClient'
+import { supabase } from '../../lib/supabase'
 
 const Today = () => {
+  console.log(supabase);
   const currentDate = dayjs();
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(false);
@@ -15,29 +16,28 @@ const Today = () => {
   const [fetchError, setFetchError] = useState(null);
   const [checklist, setChecklist] = useState(null);
 
-// useEffect(() => {
-//   const fetchChecklist = async () => {
-//     const { data, error } = await supabase
-//     .from('masterchecklist')
-//     .select()
+useEffect(() => {
+  const fetchChecklist = async () => {
+    const { data, error } = await supabase.from('masterchecklist').select('*');
+    console.log(error);
+    console.log(data);
 
-//     if (error){
-//       setFetchError("Could not fetch the smoothies")
-//       setChecklist(null)
-//       console.log(error)
-//     }
+    if (error){
+      setFetchError("Could not fetch the smoothies")
+      setChecklist(null)
+      console.log(error)
+    }
 
-//     if (data) {
-//       setChecklist(data)
-//       setFetchError(null)
-//     }
-//   }
+    if (data) {
+      setChecklist(data)
+      setFetchError(null)
+    }
+  }
 
-//   fetchChecklist()
-// }
+  fetchChecklist()
+}, [])
 
-// )
-  return (
+return (
     <ScrollView>
       <View className = "bg-primary w-screen h-screen">
         {fetchError && (<Text>{fetchError}</Text>)} 
