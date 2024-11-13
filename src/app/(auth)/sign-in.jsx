@@ -36,7 +36,7 @@ const SignIn  = () => {
       className ="border-1 border-greyshade p-10 mt-5 mb-20 bg-secondary rounded-sm"
       secureTextEntry
       />
-      {/* <Button onPress={signInWithEmail} disabled={loading} text={loading? 'Signing in ...' : 'Sign in'} /> */}
+      <Button onPress={signInWithEmail} disabled={loading} text={loading? 'Signing in ...' : 'Sign in'} />
       <Link href="/sign-up" className ="self-center text-tertiary text-lg font-bold my-10">
         Sign Up
       </Link>

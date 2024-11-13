@@ -6,7 +6,7 @@ import dayjs from "dayjs";
 const Header = ({heading}) => {
   return (
     <View className = "flex w-32 rounded-md left-5 top-10 bg-greyshade items-center">
-        <Text className = "text-secondary">
+        <Text className = "text-secondary font-bold">
         {typeof heading === 'object' ? JSON.stringify(heading) : heading}
         </Text>
       </View>

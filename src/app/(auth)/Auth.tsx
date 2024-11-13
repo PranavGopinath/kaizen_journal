@@ -41,6 +41,11 @@ export default function Auth() {
     setLoading(false)
 
   }
+  async function signInWithGithub() {
+    await supabase.auth.signInWithOAuth({
+      provider:'github'
+    })
+  }
 
   return (
     <View style={styles.container}>
@@ -66,7 +71,10 @@ export default function Auth() {
         />
       </View>
       <View style={[styles.verticallySpaced, styles.mt20]}>
-        <Button title="Sign in" disabled={loading} onPress={() => signInWithEmail()} />
+        <Button title="Sign In With Email" disabled={loading} onPress={() => signInWithEmail()} />
+      </View>
+      <View style={[styles.verticallySpaced, styles.mt20]}>
+        <Button title="Sign In with Github" disabled={loading} onPress={() => signInWithGithub()} />
       </View>
       <View style={styles.verticallySpaced}>
         <Button title="Sign up" disabled={loading} onPress={() => signUpWithEmail()} />
