@@ -52,7 +52,7 @@
     }, [checklistData, reflection]);
 
     const handleChange = (section, key, value) => {
-      if (!editMode) return; // Prevent changes if not in edit mode
+      if (!editMode) return;
       setChecklistData((prevChecklistData) => ({
         ...prevChecklistData,
         [section]: {

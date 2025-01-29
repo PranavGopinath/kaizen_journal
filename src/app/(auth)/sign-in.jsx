@@ -21,7 +21,7 @@ const SignIn  = () => {
   return (
     <View className =" bg-primary p-20 flex justify-center">
       <Stack.Screen options={{title: 'Sign-In'}} />
-      <Text className ="text-greyshade"> Email </Text>
+      <Text className ="text-greyshade"> ail </Text>
       <TextInput 
       value = {email}
       onChangeText = {setEmail}
