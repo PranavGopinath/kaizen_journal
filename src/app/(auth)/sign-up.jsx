@@ -23,7 +23,7 @@ const SignUp = () => {
     <View className = "bg-primary p-20 flex justify-center">
       <Stack.Screen options={{ title: 'Sign up' }} />
 
-      <Text className = "text-greyshade">Em</Text>
+      <Text className = "text-greyshade">Email</Text>
       <TextInput
         value={email}
         onChangeText={setEmail}
