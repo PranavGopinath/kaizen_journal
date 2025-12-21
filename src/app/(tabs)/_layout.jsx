@@ -5,6 +5,9 @@ import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import { TouchableOpacity } from 'react-native';
+import { useRouter } from 'expo-router';
+
 const TabIcon = ({icon, color, name, focused}) => {
   return (
     <View className="items-center justify-center">
@@ -20,6 +23,8 @@ const TabIcon = ({icon, color, name, focused}) => {
 }
 
 const TabsLayout = () => {
+    const router = useRouter();
+
     return (
         <>
           <Tabs
@@ -29,13 +34,24 @@ const TabsLayout = () => {
               tabBarInactiveTintColor: "#EAEAEA", 
               tabBarStyle:{
                 backgroundColor: "#1f1f1f"
-              }
+              },
+              headerRight: () => (
+                <TouchableOpacity 
+                  onPress={() => router.push('/search')}
+                  className="mr-4"
+                >
+                  <Feather name="search" size={24} color="#0B7A75" />
+                </TouchableOpacity>
+              ),
             }}
           >
             <Tabs.Screen 
               name = "calendar" 
               options = {{
-                headerShown:false,
+                headerShown: true,
+                headerTitle: "Calendar",
+                headerStyle: { backgroundColor: "#1f1f1f" },
+                headerTintColor: "#EAEAEA",
                 tabBarIcon: ({color, focused}) =>(
                   <TabIcon 
                     icon={<Feather name="calendar" size={24} color={`${focused ? '#eaeaea' : '#7d8491'}`}/>}
@@ -48,7 +64,10 @@ const TabsLayout = () => {
             <Tabs.Screen 
             name = "today" 
             options = {{
-              headerShown:false,
+              headerShown: true,
+              headerTitle: "Today's Entry",
+              headerStyle: { backgroundColor: "#1f1f1f" },
+              headerTintColor: "#EAEAEA",
               tabBarIcon: ({color, focused}) =>(
                 <TabIcon 
                   icon={<Ionicons name="create" size={24} color={`${focused ? '#eaeaea' : '#7d8491'}`}/>}
@@ -61,7 +80,10 @@ const TabsLayout = () => {
             <Tabs.Screen 
             name = "goals" 
             options = {{
-              headerShown:false,
+              headerShown: true,
+              headerTitle: "My Goals",
+              headerStyle: { backgroundColor: "#1f1f1f" },
+              headerTintColor: "#EAEAEA",
               tabBarIcon: ({color, focused}) =>(
                 <TabIcon 
                   icon={<Feather name="target" size={24} color={`${focused ? '#eaeaea' : '#7d8491'}`}/>}
@@ -74,7 +96,10 @@ const TabsLayout = () => {
             <Tabs.Screen 
             name = "profile" 
             options = {{
-              headerShown:false,
+              headerShown: true,
+              headerTitle: "Profile",
+              headerStyle: { backgroundColor: "#1f1f1f" },
+              headerTintColor: "#EAEAEA",
               tabBarIcon: ({color, focused}) =>(
                 <TabIcon 
                   icon={<MaterialCommunityIcons name="account" size={24} color={`${focused ? '#eaeaea' : '#7d8491'}`}/>}
